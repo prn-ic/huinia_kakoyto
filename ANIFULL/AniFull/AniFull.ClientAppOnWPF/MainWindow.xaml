@@ -1,0 +1,125 @@
+﻿<Window x:Class="AniFull.ClientAppOnWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AniFull.ClientAppOnWPF"
+        xmlns:viewModel="clr-namespace:AniFull.ClientAppOnWPF.MVVM.ViewModel"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Title="AniFull" Height="700" Width="1100"
+        ResizeMode="CanResizeWithGrip"
+        MinHeight="700" MinWidth="1100"
+        AllowsTransparency="True"
+        Background="{x:Null}"
+        Foreground="{x:Null}">
+
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+    
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#202020" MouseDown="WindowMovement_MouseDown" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="70"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Style="{StaticResource TollBarControlExpand}" MouseDown="MinimizeWindow_MouseDown">
+
+                </Image>
+                <Image Grid.Column="1" Style="{StaticResource TollBarControlNormal}" MouseDown="ChangeWindowState_MouseDown" >
+
+                </Image>
+                <Image Grid.Column="2" Style="{StaticResource TollBarControlClose}" MouseDown="CloseWindow_MouseDown">
+                    
+                </Image>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1" Background="Transparent">
+            <Grid>
+                <Image Source="/Resources/Images/background.png" Stretch="UniformToFill"/>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+
+
+                <ContentControl Grid.Row="1" Margin="80" Content="{Binding CurrentView}" Cursor="Hand"></ContentControl>
+                <Grid Grid.Row="2" Height="40" Background="#404040" VerticalAlignment="Bottom">
+                    <Grid Width="500">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="15"/>
+                            </Grid.RowDefinitions>
+                            <Image Source="Resources/Icons/home_inactive.png" Width="15"/>
+                            <TextBlock Grid.Row="1" Style="{StaticResource DefaultText}" HorizontalAlignment="Center" FontSize="10">Home</TextBlock>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="15"/>
+                            </Grid.RowDefinitions>
+                            <Image Source="Resources/Icons/review_inactive.png" Width="15"/>
+                            <TextBlock Grid.Row="1" Style="{StaticResource DefaultText}" HorizontalAlignment="Center" FontSize="10">Review</TextBlock>
+                        </Grid>
+                        <Grid Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="15"/>
+                            </Grid.RowDefinitions>
+                            <Image Source="Resources/Icons/bookm_inactive.png" Width="15"/>
+                            <TextBlock Grid.Row="1" Style="{StaticResource DefaultText}" HorizontalAlignment="Center" FontSize="10">Bookmarks</TextBlock>
+                        </Grid>
+                        <Grid Grid.Column="3">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="15"/>
+                            </Grid.RowDefinitions>
+                            <Image Source="Resources/Icons/notice_inactive.png" Width="15"/>
+                            <TextBlock Grid.Row="1" Style="{StaticResource DefaultText}" HorizontalAlignment="Center" FontSize="10">Notice</TextBlock>
+                        </Grid>
+                        <Grid Grid.Column="4">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="15"/>
+                            </Grid.RowDefinitions>
+                            <Image Source="Resources/Icons/profile_inactive.png" Width="15"/>
+                            <TextBlock Grid.Row="1" Style="{StaticResource DefaultText}" HorizontalAlignment="Center" FontSize="10">Profile</TextBlock>
+                        </Grid>
+                        
+                    </Grid>
+                </Grid>
+                    
+                <Grid Grid.Row="0" Height="40" Background="#404040" VerticalAlignment="Top">
+                    <Image Source="/Resources/Images/logo.png" Width="240"/>
+                </Grid>
+
+            </Grid>
+            
+        </Grid>
+        
+    </Grid>
+</Window>

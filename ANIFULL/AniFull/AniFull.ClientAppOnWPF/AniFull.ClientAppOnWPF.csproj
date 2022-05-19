@@ -1,0 +1,65 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows10.0.22000.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <StartupObject>AniFull.ClientAppOnWPF.App</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Icons\bookm_active.png" />
+    <None Remove="Resources\Icons\bookm_inactive.png" />
+    <None Remove="Resources\Icons\close_active.png" />
+    <None Remove="Resources\Icons\close_inactive.png" />
+    <None Remove="Resources\Icons\home_active.png" />
+    <None Remove="Resources\Icons\home_inactive.png" />
+    <None Remove="Resources\Icons\minimize_active.png" />
+    <None Remove="Resources\Icons\minimize_inactive.png" />
+    <None Remove="Resources\Icons\normal_active.png" />
+    <None Remove="Resources\Icons\normal_inactive.png" />
+    <None Remove="Resources\Icons\notice_active.png" />
+    <None Remove="Resources\Icons\notice_inactive.png" />
+    <None Remove="Resources\Icons\profile_active.png" />
+    <None Remove="Resources\Icons\profile_inactive.png" />
+    <None Remove="Resources\Icons\review_active.png" />
+    <None Remove="Resources\Icons\review_inactive.png" />
+    <None Remove="Resources\Images\background.png" />
+    <None Remove="Resources\Images\logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Icons\bookm_active.png" />
+    <Resource Include="Resources\Icons\bookm_inactive.png" />
+    <Resource Include="Resources\Icons\close_active.png" />
+    <Resource Include="Resources\Icons\home_active.png" />
+    <Resource Include="Resources\Icons\home_inactive.png" />
+    <Resource Include="Resources\Icons\minimize_active.png" />
+    <Resource Include="Resources\Icons\minimize_inactive.png" />
+    <Resource Include="Resources\Icons\normal_active.png" />
+    <Resource Include="Resources\Icons\normal_inactive.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\Fonts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Icons\close_inactive.png" />
+    <Resource Include="Resources\Icons\notice_active.png" />
+    <Resource Include="Resources\Icons\notice_inactive.png" />
+    <Resource Include="Resources\Icons\profile_active.png" />
+    <Resource Include="Resources\Icons\profile_inactive.png" />
+    <Resource Include="Resources\Icons\review_active.png" />
+    <Resource Include="Resources\Icons\review_inactive.png" />
+    <Resource Include="Resources\Images\background.png" />
+    <Resource Include="Resources\Images\logo.png" />
+  </ItemGroup>
+
+</Project>

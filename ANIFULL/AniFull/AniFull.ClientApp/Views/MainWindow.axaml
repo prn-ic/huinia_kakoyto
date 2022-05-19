@@ -1,0 +1,65 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:AniFull.ClientApp.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1100" d:DesignHeight="700"
+		xmlns:local="using:AniFull.ClientApp"
+		MinWidth="1100" MinHeight="700"
+		WindowStartupLocation="CenterScreen"
+		xmlns:reactiveUi="http://reactiveui.net"
+		ExtendClientAreaToDecorationsHint="{Binding ShowTaskBar}"
+		ExtendClientAreaChromeHints="NoChrome"
+		ExtendClientAreaTitleBarHeightHint="-1"
+        x:Class="AniFull.ClientApp.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="AniFull"
+		>
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+	<Window.Styles>
+        <StyleInclude Source="/Styles/Styles.axaml" />
+    </Window.Styles>
+	<Grid Name="Wrapper">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="20"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<Grid Grid.Row="0" Name="AniFullToolBar" Background="#323232" IsVisible="{Binding ShowTaskBar}">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<Grid Grid.Column="1" HorizontalAlignment="Right" Width="70">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<Button Grid.Column="0" Name="Minimize" Background="{x:Null}" Click="CollapseWindow_Click">
+					<Image Classes="TaskBarMinimize">
+					
+				</Image>
+				</Button>
+				<Button Grid.Column="1" Name="Normal" Background="{x:Null}" Click="ExpandWindow_Click"> 
+					<Image Classes="TaskBarNormal">
+
+					</Image>
+				</Button>
+				<Button Grid.Column="2" Name="Close" Background="{x:Null}" Click="CloseWindow_Click">
+					<Image Classes="TaskBarClose">
+
+					</Image>
+				</Button>
+				
+			</Grid>
+			
+		</Grid>
+		<Grid Grid.Row="1" Name="MainFrame">
+			<local:App/>
+		</Grid>
+	</Grid>
+
+</Window>

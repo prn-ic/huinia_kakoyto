@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "AniFull.ClientAppOnWPF/1.0.0": {
+        "runtime": {
+          "AniFull.ClientAppOnWPF.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AniFull.ClientAppOnWPF/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
